@@ -1,0 +1,133 @@
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	border:0;
+}
+
+html,body{
+	min-width:100%;
+	min-height:100%;
+}
+
+@keyframes lineA {
+	0%,100% {
+	clip:rect(0,320px,2px,0)
+}
+
+25% {
+	clip:rect(0,2px,320px,0)
+}
+
+50% {
+	clip:rect(320px,320px,320px,0)
+}
+
+75% {
+	clip:rect(0,320px,320px,320px)
+}
+
+}
+
+@keyframes lineB {
+	 
+0%,100% {
+	clip:rect(322px,322px,322px,0)
+}
+
+25% {
+	clip:rect(0,322px,322px,322px)
+}
+
+50% {
+	clip:rect(0,322px,2px,0)
+}
+
+75% {
+	clip:rect(0,2px,322px,0)
+}
+
+}
+
+.box {
+	background-color: #f1f1f1;
+	width: 300px;
+	height: 300px;
+	margin: 100px auto;
+	position: relative;
+	z-index: 3;
+}
+.box::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	display:none;
+	border: 2px solid blue;
+	margin: -10px;
+	z-index: -1;
+	/*-webkit-animation: lineA 8s linear infinite;
+	-o-animation: lineA 8s linear infinite;
+	animation: lineA 8s linear infinite;*/
+}
+
+.box:hover::before{
+	-webkit-animation: lineA 4s linear infinite;
+	-o-animation: lineA 4s linear infinite;
+	animation: lineA 4s linear infinite;
+	display:block;
+}
+
+.box:hover::after {
+	-webkit-animation: lineB 4s linear infinite;
+	-o-animation: lineB 4s linear infinite;
+	animation: lineB 4s linear infinite;
+	display:block;
+}
+
+.box::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	display:none;
+	border: 2px solid red;
+	margin: -10px;
+	z-index: -1;
+	/*-webkit-animation: lineB 8s linear infinite;
+	-o-animation: lineB 8s linear infinite;
+	animation: lineB 8s linear infinite;*/
+}
+
+.box img {
+	/*overflow:hidden;*/
+	width:100%;
+	height:100%;
+}
+
+
+/*index2css代码*/
+
+.ld{
+	width:100%;
+	height:100%;
+}
+
+.ld li{
+	width:350px;
+	height:200px;
+	/*background-color:red;*/
+	/*float:left;*/
+	display:inline-block;
+	margin:10px;
+}
+
+.ld li img{
+	width:100%;
+	height:100%;
+}
